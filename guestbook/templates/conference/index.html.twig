@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 {% block title %}Conference Guestbook{% endblock %}
 {% block body %}
-    <h2>Give your feedback!</h2>
+  <h2>Give your feedback!</h2>
+  <ul class="list-group">
     {% for conference in conferences %}
+      <li class="list-group-item">
         <h4>{{ conference }}</h4>
-                 <p>
-            <a href="{{ path('conference', { slug: conference.slug }) }}">View</a>
-         </p>
+        <p>
+          <a href="{{ path('conference', { slug: conference.slug }) }}" class="btn btn-primary">View</a>
+        </p>
+      </li>
     {% endfor %}
+  </ul>
 {% endblock %}
